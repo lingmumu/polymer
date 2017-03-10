@@ -1,0 +1,49 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<dom-module id="my-toolbar">
+    <template>
+        <style>
+            :host{
+                padding:4px;
+                background-color: gray;
+
+            }
+            .title{
+                color: var(--my-toolbar-title-color,blue);
+            }
+
+        </style>
+        <span class="title">{{title}}</span>
+    </template>
+    <script>
+        Polymer({
+            is:"my-toolbar",
+            properties:{
+                title:String
+            }
+        })
+    </script>
+</dom-module>
+<!--<dom-module id="my-toolbar">-->
+    <!--<template>-->
+        <!--<style>-->
+            <!--:host{-->
+                <!--padding:4px;-->
+                <!--background: gray;-->
+                <!--@apply(&#45;&#45;my-toolbar-theme);-->
+
+            <!--}-->
+            <!--.title{-->
+                <!--@apply(&#45;&#45;my-toolbar-title-theme)-->
+            <!--}-->
+        <!--</style>-->
+        <!--<span class="title">{{title}}</span>-->
+    <!--</template>-->
+    <!--<script>-->
+        <!--Polymer({-->
+            <!--is:"my-toolbar",-->
+            <!--properties:{-->
+            <!--title:String-->
+         <!--}-->
+        <!--})-->
+    <!--</script>-->
+<!--</dom-module>-->

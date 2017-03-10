@@ -1,0 +1,93 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="my-toolbar.html">
+<link rel="import" href="highlight-behavior.html">
+<dom-module id="my-element">
+    <template>
+        <style>
+            :host{
+                display: block;
+                border:1px solid red;
+
+                --my-toolbar-title-color:green;
+            }
+            #child-element{
+                background-color: yellow;
+            }
+            .content-wrapper ::content > .special{
+                background-color: orange;
+            }
+            .warning{
+                --my-toolbar-title-color: red;
+            }
+        </style>
+        <my-toolbar title="This one is green."></my-toolbar>
+        <my-toolbar title="This one is green too."></my-toolbar>
+        <my-toolbar class="warning" title="This one is red."></my-toolbar>
+        <div id="child-element">In local DOM!</div>
+        <div class="content-wrapper"><content></content></div>
+    </template>
+    <script>
+
+             MyElement = Polymer({
+
+                is: 'my-element',
+
+                created: function() {
+                    console.log(this.localName + '#' + this.id + ' was created');
+                },
+
+                ready: function() {
+                    console.log(this.localName + '#' + this.id + ' has local DOM initialized');
+                },
+
+                attached: function() {
+                    console.log(this.localName + '#' + this.id + ' was attached');
+                },
+
+                detached: function() {
+                    console.log(this.localName + '#' + this.id + ' was detached');
+                },
+
+                attributeChanged: function(name, type) {
+                    console.log(this.localName + '#' + this.id + ' attribute ' + name +
+                        ' was changed to ' + this.getAttribute(name));
+                }
+
+            });
+
+    </script>
+</dom-module>
+<!--<link rel="import" href="bower_components/polymer/polymer.html">-->
+<!--<link rel="import" href="my-toolbar.html">-->
+<!--<dom-module id="my-element">-->
+    <!--<template>-->
+        <!--<style>-->
+            <!--:host{-->
+                <!--&#45;&#45;my-toolbar-theme:{-->
+                    <!--background: #cccccc;-->
+                    <!--border-radius: 4px;-->
+                    <!--border:1px solid gray;-->
+                <!--};-->
+                <!--&#45;&#45;my-toolbar-title-theme:{-->
+                    <!--color: green;-->
+                <!--}-->
+            <!--}-->
+
+            <!--.warning{-->
+                <!--&#45;&#45;my-toolbar-title-theme: {-->
+                    <!--color: red;-->
+                    <!--font-weight: bold;-->
+                <!--};-->
+            <!--}-->
+        <!--</style>-->
+        <!--<my-toolbar title="This one is green."></my-toolbar>-->
+        <!--<my-toolbar title="This one is green too."></my-toolbar>-->
+        <!--<my-toolbar class="warning" title="This one is red."></my-toolbar>-->
+
+    <!--</template>-->
+    <!--<script>-->
+        <!--Polymer({-->
+            <!--is:"my-element"-->
+        <!--})-->
+    <!--</script>-->
+<!--</dom-module>-->

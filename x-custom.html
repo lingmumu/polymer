@@ -1,0 +1,22 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="my-toolbar.html">
+<dom-module id="x-custom">
+    <template>
+        <style>
+            :host{
+                --my-toolbar-title-color: red;
+            }
+        </style>
+        <my-toolbar>My awesome app</my-toolbar>
+        <button on-tap="changeTheme">Change theme</button>
+    </template>
+    <script>
+        Polymer({
+            is:"x-custom",
+            changeTheme:function () {
+                this.customStyle['--my-toolbar-title-color'] = 'blue';
+                this.updateStyles();
+            }
+        })
+    </script>
+</dom-module>

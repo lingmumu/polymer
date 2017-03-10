@@ -1,0 +1,16 @@
+<dom-module id="name-card">
+    <template>
+        <div>[[name.first]] [[name.last]]</div>
+    </template>
+    <script>
+        Polymer({
+            is: 'name-card',
+            ready:function () {
+                this.name = {
+                    'first': 'Lizzy',
+                    'last': 'Bennet'
+                }
+            }
+        });
+    </script>
+</dom-module>
